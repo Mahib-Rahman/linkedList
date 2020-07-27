@@ -27,6 +27,22 @@ linkedList<T>::linkedList(vector<T> arr)
     }
 }
 
+template <typename T>
+T linkedList<T>::index_val(int index)
+{
+    temp = head;
+
+    while(index > 0)
+    {
+        if(temp -> next == NULL)
+            break;
+        temp = temp -> next;
+        index--;
+    }
+
+    return temp -> data;
+}
+
 template<typename T>
 void linkedList<T>::reverse()
 {

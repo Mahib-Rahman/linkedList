@@ -18,6 +18,12 @@ int main()
     myList.printList();
     cout << myList.size() << endl;
 
+    //tests the index_val function
+    //this function lets you acess an element in the list given its index
+    cout << myList.index_val(0) << endl;
+    cout << myList.index_val(1) << endl;
+    cout << myList.index_val(5) << endl;
+
     //adding an element at a position in the list with
     //then printing the list as well as the nesw size 
     myList.add_at_pos(99, 2);
