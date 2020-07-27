@@ -24,6 +24,7 @@ private:
 public:
     linkedList();
     linkedList(vector<T> arr);
+    T index_val(int index);
     void addback(T value);
     void addfront(T value);
     void printList();
