@@ -30,17 +30,36 @@ linkedList<T>::linkedList(vector<T> arr)
 template <typename T>
 T linkedList<T>::index_val(int index)
 {
-    temp = head;
-
-    while(index > 0)
+    //this function returns the data in the node that was requwsted by the index
+    //brak the list into two halves for better time complexity
+    if(index <= (size_of_list/2))
     {
-        if(temp -> next == NULL)
-            break;
-        temp = temp -> next;
-        index--;
-    }
+        temp = head;
 
-    return temp -> data;
+        while(index > 0)
+        {
+            if(temp -> next == NULL)
+                break;
+            temp = temp -> next;
+            index--;
+        }
+
+        return temp -> data;
+    }
+    else
+    {
+        temp = tail;
+        index = size_of_list - index - 1;
+        while(index > 0)
+        {
+            if(temp -> prev == NULL)
+                break;
+            temp = temp -> prev;
+            index--;
+        }
+
+        return temp -> data;
+    }
 }
 
 template<typename T>
